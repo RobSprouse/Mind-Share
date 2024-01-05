@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import formatDate from "../utils/helpers.js";
 
 const { Schema } = mongoose;
 
@@ -20,10 +21,7 @@ const ReactionSchema = new Schema({
           type: Date,
           default: Date.now,
           get: (timestamp) => {
-               const dateObject = new Date(timestamp);
-               return `${
-                    dateObject.getMonth() + 1
-               }/${dateObject.getDate()}/${dateObject.getFullYear()} at ${dateObject.getHours()}:${dateObject.getMinutes()}`;
+               return formatDate(timestamp);
           },
      },
 });

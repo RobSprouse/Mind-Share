@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import ReactionSchema from "./Reaction.js";
+import formatDate from "../utils/helpers.js";
 
 const { Schema, model } = mongoose;
 
@@ -15,10 +16,7 @@ const ThoughtSchema = new Schema(
                type: Date,
                default: Date.now,
                get: (timestamp) => {
-                    const dateObject = new Date(timestamp);
-                    return `${
-                         dateObject.getMonth() + 1
-                    }/${dateObject.getDate()}/${dateObject.getFullYear()} at ${dateObject.getHours()}:${dateObject.getMinutes()}`;
+                    return formatDate(timestamp);
                },
           },
           username: {
