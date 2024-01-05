@@ -62,12 +62,13 @@ export const userController = {
      // COMMENT: Delete a user by its _id
      async deleteUser({ params }, res) {
           try {
-               const deletedUser = await User.findOneAndDelete({ _id: params.id });
-               if (!deletedUser) {
+               const user = await User.findOne({ _id: params.id });
+               if (!user) {
                     res.status(404).json({ message: "No user found with this id!" });
                     return;
                }
-               res.json(deletedUser);
+               await user.deleteOne();
+               res.json(user);
           } catch (err) {
                console.log(err);
                res.status(500).json(err);

@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import Thought from "./Thought.js";
 
 const { Schema, model } = mongoose;
 
@@ -35,6 +36,15 @@ const UserSchema = new Schema(
           },
      }
 );
+
+UserSchema.pre("deleteOne", { document: true, query: false }, async function (next) {
+     try {
+          await Thought.deleteMany({ username: this.username });
+          next();
+     } catch (error) {
+          next(error);
+     }
+});
 
 UserSchema.virtual("friendCount").get(function () {
      return this.friends.length;
