@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import uniqueValidator from "mongoose-unique-validator";
 
 const { Schema, model } = mongoose;
 
@@ -36,8 +35,6 @@ const UserSchema = new Schema(
           },
      }
 );
-
-UserSchema.plugin(uniqueValidator);
 
 UserSchema.virtual("friendCount").get(function () {
      return this.friends.length;
