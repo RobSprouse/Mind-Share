@@ -3,6 +3,6 @@ import apiRoutes from "./api/index.js";
 
 const router = express.Router();
 
-router.use("/api", apiRoutes, (req, res) => res.send("Wrong route!"));
+router.use("/api", apiRoutes, (req, res) => res.send("This route does not exist!"));
 
 export default router;
