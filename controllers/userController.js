@@ -1,6 +1,8 @@
+// COMMENT: imports the User and Thought models
 import User from "../models/User.js";
 import Thought from "../models/Thought.js";
 
+// COMMENT: exports the userController which contains the methods for all of the routes
 export const userController = {
      // COMMENT: Get all users
      async getAllUsers(req, res) {
