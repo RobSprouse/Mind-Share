@@ -78,7 +78,7 @@ To manually enter in the routes to test the API, the following routes can be use
 
 The following link is to a video demonstrating the functionality of the application.
 
-<!-- TODO: Insert Video Link -->
+[Google Drive: Mind-Share](https://drive.google.com/file/d/1azk0-0NQw-fCIOj8ulguu_D-DXbatAtj/view?usp=sharing)
 
 ## License
 
