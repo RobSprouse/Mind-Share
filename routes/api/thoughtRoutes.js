@@ -11,8 +11,8 @@ const { getAllThoughts, getThoughtById, createThought, updateThought, deleteThou
 // COMMENT: defines the routes for the methods
 router.route("/").get(getAllThoughts);
 router.route("/:userId").post(createThought);
-router.route("/:thoughtId/reactions").post(addReaction);
 router.route("/:thoughtId/reactions/:reactionId").delete(deleteReaction);
+router.route("/:thoughtId/reactions").post(addReaction);
 router.route("/:id").get(getThoughtById).put(updateThought).delete(deleteThought);
 
 // COMMENT: exports the router for ./index.js
