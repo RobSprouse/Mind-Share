@@ -51,6 +51,9 @@ async function seedData() {
 
                thought = await thought.save();
 
+               user.thoughts.push(thought._id);
+               await user.save();
+
                thoughts.push(thought);
           }
      }
